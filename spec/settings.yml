@@ -26,3 +26,12 @@ array:
     name: first
   -
     name: second
+
+defaults: &defaults
+  base: base definition
+  other: that other thing
+
+overriden:
+  <<: *defaults
+  base: overrriden definition
+  

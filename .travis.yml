@@ -1,6 +1,19 @@
+branches:
+  only:
+  - main
+cache: bundler
 language: ruby
 rvm:
-  - 1.8.7
-  - 1.9.3
-  - 2.0.0
-  - 2.1.2
+  - 2.7.2
+  - 3.1.3 
+  - 3.2.1
+
+script:
+- bundle exec rspec
+
+deploy:
+  provider: script
+  script: ./bin/travis_deploy
+  on:
+    branch: main
+    condition: type != pull_request
