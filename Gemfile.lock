@@ -23,15 +23,12 @@ GEM
     rspec-support (3.12.0)
 
 PLATFORMS
-  x86_64-darwin-22
+  ruby
 
 DEPENDENCIES
   rake
   rspec
-  settingslogic!
-
-RUBY VERSION
-   ruby 3.2.1p31
+  settingslogic-gh!
 
 BUNDLED WITH
    2.4.7
