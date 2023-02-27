@@ -13,7 +13,7 @@ script:
 
 deploy:
   provider: script
-  script: ./bin/travis_deploy
+  script: ./bin/travis_deploy.sh
   on:
     branch: main
     condition: type != pull_request
