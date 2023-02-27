@@ -33,5 +33,4 @@ defaults: &defaults
 
 overriden:
   <<: *defaults
-  base: overrriden definition
-  
+  base: overriden definition

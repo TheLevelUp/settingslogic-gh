@@ -186,6 +186,14 @@ describe "Settingslogic" do
     }
   end
 
+  it "should handle aliases" do
+    Settings.defaults.base.should     == "base definition"
+    Settings.defaults.other.should    == "that other thing"
+
+    Settings.overriden.base.should   == "overriden definition"
+    Settings.overriden.other.should  == "that other thing"
+  end
+
   it "should handle empty file" do
     SettingsEmpty.keys.should eql([])
   end
