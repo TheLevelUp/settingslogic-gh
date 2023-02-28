@@ -100,7 +100,7 @@ class Settingslogic < Hash
       self.replace hash_or_file
     else
       file_contents = open(hash_or_file).read
-      hash = file_contents.empty? ? {} : YAML.load(ERB.new(file_contents).result).to_hash
+      hash = file_contents.empty? ? {} : yaml_unsafe_load(ERB.new(file_contents).result).to_hash
       if self.class.namespace
         hash = hash[self.class.namespace] or return missing_key("Missing setting '#{self.class.namespace}' in #{hash_or_file}")
       end
@@ -187,5 +187,15 @@ class Settingslogic < Hash
     return nil if self.class.suppress_errors
 
     raise MissingSetting, msg
+  end
+
+  private
+
+  def yaml_unsafe_load(yaml)
+    if YAML.respond_to?(:unsafe_load)
+      YAML.unsafe_load(yaml)
+    else
+      YAML.load(yaml)
+    end
   end
 end

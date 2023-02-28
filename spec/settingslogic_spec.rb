@@ -84,7 +84,7 @@ describe "Settingslogic" do
 
     Settings.language['erlang'] = {'paradigm' => 'functional'}
     Settings.language.erlang.paradigm.should == 'functional'
-    Settings.respond_to?('erlang').should be_false
+    Settings.respond_to?('erlang').should be false
 
     Settings.reload!
     Settings.language['erlang'].should be_nil
@@ -184,6 +184,14 @@ describe "Settingslogic" do
       :haskell => {:paradigm => "functional"},
       :smalltalk => {:paradigm => "object oriented"}
     }
+  end
+
+  it "should handle aliases" do
+    Settings.defaults.base.should     == "base definition"
+    Settings.defaults.other.should    == "that other thing"
+
+    Settings.overriden.base.should   == "overriden definition"
+    Settings.overriden.other.should  == "that other thing"
   end
 
   it "should handle empty file" do
