@@ -15,8 +15,10 @@ jobs:
   include:
     - stage: gem release
       rvm: 3.2.1
-      if: type != pull_request && branch = main
+      if: type != pull_request
       script: skip
       deploy:
         provider: script
         script: ./bin/travis_deploy.sh
+        on:
+          branch: main
