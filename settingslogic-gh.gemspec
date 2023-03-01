@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "settingslogic-gh"
-  s.version     = "2.0.9.gh.1"
+  s.version     = "2.0.9.gh.2"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ben Johnson"]
   s.email       = ["bjohnson@binarylogic.com"]
@@ -16,6 +16,5 @@ Gem::Specification.new do |s|
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 end

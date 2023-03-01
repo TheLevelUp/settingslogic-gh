@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    settingslogic-gh (2.0.9.gh.1)
+    settingslogic-gh (2.0.9.gh.2)
 
 GEM
   remote: https://rubygems.org/
